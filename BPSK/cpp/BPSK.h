@@ -15,7 +15,6 @@ class BPSK_i : public BPSK_base
         int serviceFunction();
     private:
         void createModem(void);
-        void sizeVectors(void);
         modem bpsk_modem;
         BULKIO::StreamSRI m_sriOut;
         double m_delta;

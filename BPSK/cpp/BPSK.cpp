@@ -16,7 +16,6 @@ BPSK_i::BPSK_i(const char *uuid, const char *label) :
 {
 	bpsk_modem = NULL;
 	m_delta = 0.0;
-	//BPSK_i::createModem();
 	m_sriOut = bulkio::sri::create("BPSK_OUT");
 }
 
@@ -170,6 +169,7 @@ int BPSK_i::serviceFunction()
 	//check that the input stream is ok
 	if(not input)
 		return NOOP;
+
 	//put the modulated data into a complex float vector
 	std::vector< std::complex<float> >* preDemod = (std::vector<std::complex<float> >*) &(input->dataBuffer);
 	//integer vector for demodulated output
@@ -183,7 +183,6 @@ int BPSK_i::serviceFunction()
 		m_sriOut = input->SRI;
 		m_sriOut.mode = 0;
 		createModem();
-		//sizeVectors();
 		dataDouble_out->pushSRI(m_sriOut);
 	}
 	//Double vector to cast the output into so it can be pushed to the uses port since
@@ -210,7 +209,4 @@ void BPSK_i::createModem(void)
 	bpsk_modem = modem_create(LIQUID_MODEM_BPSK);
 }
 
-void BPSK_i::sizeVectors(void)
-{
-	//output
-}
+
