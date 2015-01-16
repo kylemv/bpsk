@@ -1,2 +1,2 @@
 # bpsk
-Binary Phase Shist Keying Demododulator for use with redhawk using liquid-dsp library.  
+Binary Phase Shift Keying Demododulator for use with redhawk using liquid-dsp library.  
