@@ -22,14 +22,10 @@ class BPSK_base : public Resource_impl, protected ThreadedComponent
         void loadProperties();
 
     protected:
-        // Member variables exposed as properties
-        float Output_Rate;
-        CORBA::Long Symbol_Length;
 
         // Ports
         bulkio::InFloatPort *dataFloat_in;
-        bulkio::InFloatPort *clockFloat_in;
-        bulkio::OutDoublePort *dataDouble_out;
+        bulkio::OutULongPort *dataLong_out;
 
     private:
 };

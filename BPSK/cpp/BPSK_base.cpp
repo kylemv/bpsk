@@ -18,20 +18,16 @@ BPSK_base::BPSK_base(const char *uuid, const char *label) :
 
     dataFloat_in = new bulkio::InFloatPort("dataFloat_in");
     addPort("dataFloat_in", dataFloat_in);
-    clockFloat_in = new bulkio::InFloatPort("clockFloat_in");
-    addPort("clockFloat_in", clockFloat_in);
-    dataDouble_out = new bulkio::OutDoublePort("dataDouble_out");
-    addPort("dataDouble_out", dataDouble_out);
+    dataLong_out = new bulkio::OutULongPort("dataLong_out");
+    addPort("dataLong_out", dataLong_out);
 }
 
 BPSK_base::~BPSK_base()
 {
     delete dataFloat_in;
     dataFloat_in = 0;
-    delete clockFloat_in;
-    clockFloat_in = 0;
-    delete dataDouble_out;
-    dataDouble_out = 0;
+    delete dataLong_out;
+    dataLong_out = 0;
 }
 
 /*******************************************************************************************
@@ -66,24 +62,6 @@ void BPSK_base::releaseObject() throw (CORBA::SystemException, CF::LifeCycle::Re
 
 void BPSK_base::loadProperties()
 {
-    addProperty(Output_Rate,
-                0,
-                "Output Rate",
-                "",
-                "readonly",
-                "S/s",
-                "external",
-                "configure");
-
-    addProperty(Symbol_Length,
-                0,
-                "Symbol Length",
-                "",
-                "readonly",
-                "bits",
-                "external",
-                "configure");
-
 }
 
 

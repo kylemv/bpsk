@@ -183,19 +183,14 @@ int BPSK_i::serviceFunction()
 		m_sriOut = input->SRI;
 		m_sriOut.mode = 0;
 		createModem();
-		dataDouble_out->pushSRI(m_sriOut);
+		dataLong_out->pushSRI(m_sriOut);
 	}
-	//Double vector to cast the output into so it can be pushed to the uses port since
-	//it seems an unsigned int port type doesn't exist.
-	std::vector<double> dbout;
-	dbout.resize(size);
 	//Demodulate the input signal and store it in output vector using [liquid] BPSK demod
 	for(unsigned int i = 0; i < size; i++){
 		modem_demodulate(bpsk_modem, preDemod->at(i), &output[i]);
-		dbout.at(i) = output.at(i);
 	}
 
-	dataDouble_out->pushPacket(dbout, input->T, input->EOS, input->streamID);
+	dataLong_out->pushPacket(output, input->T, input->EOS, input->streamID);
 	delete input;
 	return NORMAL;
 }

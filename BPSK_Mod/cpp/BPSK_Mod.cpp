@@ -181,7 +181,7 @@ int BPSK_Mod_i::serviceFunction()
 		if(input->sriChanged){
 			m_delta = input->SRI.xdelta;
 			m_sriOut = input->SRI;
-			m_sriOut.mode = 0;
+			m_sriOut.mode = 1;
 			createModem();
 			dataFloat_out->pushSRI(m_sriOut);
 		}

@@ -1,16 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
-<properties>
-  <simple id="Output Rate" mode="readonly" type="float">
-    <value>0</value>
-    <units>S/s</units>
-    <kind kindtype="configure"/>
-    <action type="external"/>
-  </simple>
-  <simple id="Symbol Length" mode="readonly" type="long">
-    <value>0</value>
-    <units>bits</units>
-    <kind kindtype="configure"/>
-    <action type="external"/>
-  </simple>
-</properties>
+<properties/>
