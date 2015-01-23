@@ -51,6 +51,6 @@ components in Redhawk, see chapters 3 and 4 in the documentation located here:
 
       -http://redhawksdr.github.io/Documentation/main.html
 
-For more information on Redhawk see redhawksdr.org
+For more information on Redhawk see http://redhawksdr.github.io/Documentation/index.html
 
 For more information on liquid-dsp see liquidsdr.org
